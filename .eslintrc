@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "React": "readonly"
+    },
+    "rules": {
+        "prefer-const": "error",
+        "no-unused-vars": 
+        [ "error", // or "error"
+        { 
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+        ],
+        "react/prop-types": "off"
+    }
+}

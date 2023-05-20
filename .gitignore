@@ -1,0 +1,9 @@
+.DS_Store
+.npmrc
+.nvmrc
+.env
+.env.local
+.vercel
+.next
+
+node_modules/

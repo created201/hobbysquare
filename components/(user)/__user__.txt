@@ -1,0 +1,2 @@
+This folder contains components 
+generally reusable throughout the application's USER RELATED PAGES [user's account profile, user's account setting].

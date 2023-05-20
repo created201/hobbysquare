@@ -1,0 +1,48 @@
+/* eslint-disable no-unused-vars */
+type Schema<DataInterface, MetaDataInterface> = {
+    _id: string
+    data: DataInterface
+    metadata: MetaDataInterface
+}
+
+interface IUser {
+    /** BASIC INFO ABOUT USER */
+    name: string
+    email: string
+    image: string
+    /** POST RELATED */
+    myPosts: Array<string>
+    likedPosts: Array<string>
+}
+
+type User = Schema<
+    IUser,
+    {
+        createdAt: string
+        updatedAt: string
+    }
+>
+
+type HobbyCategory = "sports" | "drawing" | "music" | "game"
+
+type HobbySkillLevel = "beginner" | "intermediate" | "expert"
+
+interface IPost {
+    /** BASIC INFO ABOUT POST */
+    postedBy: string // author's user id
+    title: string
+    category: HobbyCategory
+    description: string
+    when: string
+    what: string
+    skillLevel: HobbySkillLevel
+    likedBy: Array<string> // Users' Ids who liked the post
+}
+
+type Post = Schema<
+    IPost,
+    {
+        createdAt: string
+        updatedAt: string
+    }
+>

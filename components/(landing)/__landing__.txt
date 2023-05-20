@@ -1,0 +1,2 @@
+This folder contains components 
+reusable throughout the application's LANDING PAGE.
