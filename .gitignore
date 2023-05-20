@@ -5,5 +5,6 @@
 .env.local
 .vercel
 .next
+.bashrc
 
 node_modules/
