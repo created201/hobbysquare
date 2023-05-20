@@ -8,10 +8,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                "theme-main": "#0081C9",
-                "theme-sup": "#5BC0F8",
-                "theme-sub": "#86E5FF",
-                "theme-highlight": "#FFC93C",
+                "theme-white": "#FFFFFF",
+                "theme-gray": "#555555",
+                "theme-dark": "#111111",
             },
             maxWidth: {
                 cutoff: "1440px",
