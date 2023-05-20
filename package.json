@@ -1,6 +1,5 @@
 {
     "name": "created-201-template",
-    "type": "module",
     "version": "1.0.0",
     "engines": {
         "node": ">=16.8.0 <17.0.0"
