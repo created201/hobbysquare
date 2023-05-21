@@ -1,4 +1,4 @@
-import { classnames, getCategories } from "@/helpers"
+import { classnames, getCategories, getMockFeeds } from "@/helpers"
 import { useState } from "react"
 import dynamic from "next/dynamic"
 
@@ -65,7 +65,7 @@ const DashboardPage = () => {
                             }}
                             displayPattern="lg:grid hidden"
                         />
-                        <Feeds expand={!expandProfile} feeds={[]} />
+                        <Feeds expand={!expandProfile} feeds={getMockFeeds()} />
                     </div>
                 </div>
                 <UserProfileBar
