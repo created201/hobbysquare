@@ -1,6 +1,13 @@
 class __Data__ {
     static getCategories() {
-        const categories = ["music", "arts", "sports", "cooking", "games"]
+        const categories = [
+            "music",
+            "arts",
+            "sports",
+            "cooking",
+            "games",
+            "trips",
+        ]
         return categories
     }
 
