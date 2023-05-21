@@ -1,12 +1,43 @@
+import { BsInstagram, BsGithub, BsTwitter } from "react-icons/bs"
+
 const FooterLayout = () => {
     return (
-        <footer className="flex px-4">
-            <div className="px-2">
-                <h4>Contacts</h4>
-                <p>Jin Lee: 123</p>
-                <p>Jaehong Park: 213</p>
-                <p>Haneul Choi: 155</p>
-            </div>
+        <footer className="w-full flex p-4 xl:p-10 justify-center bg-black text-white">
+            <section className="flex flex-col justify-between xl:grid xl:grid-cols-3 w-full xl:w-7/12">
+                {/* About */}
+                <div className="w-full p-4">
+                    <h4 className="text-lg font-bold">About</h4>
+                    <div className="text-gray-500 mt-3 text-sm">
+                        <p>News</p>
+                        <p>Purpose</p>
+                        <p>Investment</p>
+                    </div>
+                </div>
+
+                <hr className="xl:hidden w-11/12 my-1 mx-auto text-gray-500" />
+
+                {/* Contact */}
+                <div className="w-full p-4">
+                    <h4 className="text-lg font-bold">Contacts</h4>
+                    <div className="text-gray-500 mt-3 text-sm">
+                        <p>Jin Lee: 530-111-222</p>
+                        <p>Jaehong Park: 530-111-222</p>
+                        <p>Haneul Choi: 530-111-222</p>
+                    </div>
+                </div>
+
+                <hr className="xl:hidden w-11/12 my-1 mx-auto text-gray-500" />
+
+                {/* Social Media */}
+                <div className="w-full p-4">
+                    <h4 className="text-lg font-bold">Our Socials</h4>
+                    <div className="flex justify-evenly my-5 text-2xl text-gray-400">
+                        <BsInstagram className="rounded-full bg-gray" />
+                        <BsGithub className="rounded-full bg-gray" />
+                        <BsTwitter className="rounded-full bg-gray" />
+                    </div>
+                </div>
+            </section>
         </footer>
     )
 }
