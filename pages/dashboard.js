@@ -14,7 +14,7 @@ const UserProfileBar = dynamic(() =>
 
 const DashboardPage = () => {
     const [search, setSearch] = useState("")
-    const [category, setCategory] = useState(getCategories()[0])
+    const [category, setCategory] = useState("")
     const [expandProfile, setExpandProfileBar] = useState(true)
 
     function onSelectCategory(_category) {
@@ -65,7 +65,17 @@ const DashboardPage = () => {
                             }}
                             displayPattern="lg:grid hidden"
                         />
-                        <Feeds expand={!expandProfile} feeds={getMockFeeds()} />
+                        <Feeds
+                            expand={!expandProfile}
+                            feeds={
+                                category
+                                    ? getMockFeeds().filter(
+                                          (feed) =>
+                                              feed.data.category === category
+                                      )
+                                    : getMockFeeds()
+                            }
+                        />
                     </div>
                 </div>
                 <UserProfileBar

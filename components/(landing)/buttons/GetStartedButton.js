@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-const GetStartedButton = ({ user }) => {
+const GetStartedButton = () => {
     const router = useRouter()
 
     function onGetStarted() {

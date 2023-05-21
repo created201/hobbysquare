@@ -23,7 +23,7 @@ const Feed = ({ _id, data }) => {
 
     return (
         <>
-            <div className="flex flex-col-reverse lg:grid grid-cols-6 relative border-solid border-2 gap-x-5 p-4 h-full w-ful rounded-md hover:shadow-[0_2px_8px_0_rgba(99,99,99,0.2)]">
+            <div className="flex flex-col-reverse lg:grid grid-cols-6 relative border-solid border lg:border-2 gap-x-5 p-4 h-full w-ful rounded-md lg:hover:shadow-[0_2px_8px_0_rgba(99,99,99,0.2)]">
                 {/* Description */}
                 <div className="col-span-3 sm:col-span-4 p-2">
                     <div className="flex flex-col gap-x-2 mb-3">

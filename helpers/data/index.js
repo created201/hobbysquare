@@ -59,6 +59,19 @@ class __Data__ {
                     category: "cooking",
                 },
             },
+            {
+                _id: "4",
+                data: {
+                    title: "Pencil Portrait Drawing Session",
+                    description:
+                        "I want to find an art student to draw each other's portraits with pencil.",
+                    when: "Sun, May 25th",
+                    where: "My Place",
+                    what: "Drawing",
+                    skillLevel: "advanced",
+                    category: "arts",
+                },
+            },
         ]
         return mockFeeds
     }
