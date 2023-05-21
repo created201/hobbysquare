@@ -13,6 +13,7 @@
             "@/hooks": ["hooks/index.js"],
             "@/server/*": ["libs/server/*"],
             "@/client/*": ["libs/client/*"]
-        }
+        },
+        "module": "ESNext"
     }
 }

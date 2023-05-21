@@ -28,7 +28,7 @@ const HeaderLayout = () => {
 
     return (
         <header className="w-full fixed top-0 left-0 z-40 bg-theme-white/90 backdrop-blur-sm text-theme-dark">
-            <section className="relative w-full mx-auto px-4 py-4 2xl:px-8 flex justify-between items-center">
+            <section className="relative w-full mx-auto px-4 py-2 2xl:px-8 flex justify-between items-center">
                 <LogoLink />
                 <div className="flex">
                     <MobileNav onClick={onToggleNav} show={showMobileNav} />
