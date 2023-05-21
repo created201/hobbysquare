@@ -5,20 +5,11 @@ export function __getRoutes__() {
             icon: (icon) => icon,
             isCurrentRoute: (routerPathname) => routerPathname === "/",
         },
-        login: {
-            href: "/login",
-            icon: (icon) => icon,
-            isCurrentRoute: (routerPathname) => routerPathname === "/login",
-        },
+
         dashboard: {
             href: "/dashboard",
             icon: (icon) => icon,
             isCurrentRoute: (routerPathname) => routerPathname === "/dashboard",
-        },
-        account: {
-            href: "/account",
-            icon: (icon) => icon,
-            isCurrentRoute: (routerPathname) => routerPathname === "/account",
         },
         create: {
             href: "/posts/create",
