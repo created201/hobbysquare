@@ -1,5 +1,4 @@
 import { alertButtonNotAvailable } from "@/helpers"
-import { signIn } from "next-auth/react"
 import dynamic from "next/dynamic"
 
 import { BsFacebook, BsGoogle, BsGithub } from "react-icons/bs"
@@ -42,7 +41,7 @@ const LoginPage = () => {
 
                     <div className="flex flex-col justify-center gap-y-2">
                         <button
-                            onClick={() => signIn("google")}
+                            onClick={alertButtonNotAvailable}
                             className="flex justify-center items-center gap-x-3 rounded-full px-6 py-3 font-medium text-base text-[#ffffff] bg-blue-500  transition-smooth lg:hover:opacity-60 lg:hover:text-theme-white"
                         >
                             <BsGoogle className="w-5 h-5" />
