@@ -2,7 +2,7 @@ import { classnames } from "@/helpers"
 import Link from "next/link"
 import { FiArrowRight } from "react-icons/fi"
 
-const MobileNavToggle = ({ show }) => {
+const MobileNavToggle = ({ show, user }) => {
     return (
         <div
             className={classnames(
@@ -21,13 +21,6 @@ const MobileNavToggle = ({ show }) => {
                     <FiArrowRight />
                 </Link>
                 <Link
-                    href="/login"
-                    className="w-full flex items-center justify-between gap-x-4 font0medium"
-                >
-                    <span>Login</span>
-                    <FiArrowRight />
-                </Link>
-                <Link
                     href="/dashboard"
                     className="w-full flex items-center justify-between gap-x-4 font0medium"
                 >
@@ -38,9 +31,27 @@ const MobileNavToggle = ({ show }) => {
                     href="/posts/create"
                     className="w-full flex items-center justify-between gap-x-4 font0medium"
                 >
-                    <span>Create A Post</span>
+                    <span>Create Post</span>
                     <FiArrowRight />
                 </Link>
+                {!user && (
+                    <Link
+                        href="/login"
+                        className="w-full flex items-center justify-between gap-x-4 font0medium text-pink-500"
+                    >
+                        <span>Login</span>
+                        <FiArrowRight />
+                    </Link>
+                )}
+                {user && (
+                    <Link
+                        href="/login"
+                        className="w-full flex items-center justify-between gap-x-4 font0medium text-pink-500"
+                    >
+                        <span>Sign Out</span>
+                        <FiArrowRight />
+                    </Link>
+                )}
             </section>
         </div>
     )

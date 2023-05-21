@@ -1,7 +1,8 @@
-import { getRoutes } from "@/helpers"
 import dynamic from "next/dynamic"
+import { getRoutes } from "@/helpers"
 import { useRouter } from "next/router"
 import { useState } from "react"
+
 const LogoLink = dynamic(() => import("@/(general)/links/LogoLink"))
 const MobileNav = dynamic(() => import("@/(general)/navs/MobileNav"))
 const MobileNavToggle = dynamic(() =>
@@ -9,7 +10,7 @@ const MobileNavToggle = dynamic(() =>
 )
 const DesktopNav = dynamic(() => import("@/(general)/navs/DesktopNav"))
 
-const HeaderLayout = () => {
+const HeaderLayout = ({ user }) => {
     const router = useRouter()
 
     const { keys, routes } = getRoutes()
@@ -31,9 +32,14 @@ const HeaderLayout = () => {
             <section className="relative w-full mx-auto px-4 py-2 2xl:px-8 flex justify-between items-center">
                 <LogoLink />
                 <div className="flex">
-                    <MobileNav onClick={onToggleNav} show={showMobileNav} />
+                    <MobileNav
+                        user={user}
+                        onClick={onToggleNav}
+                        show={showMobileNav}
+                    />
                     <MobileNavToggle show={showMobileNav} />
                     <DesktopNav
+                        user={user}
                         routeNames={keys}
                         routes={routes}
                         currentRoute={getCurrentRoute()}

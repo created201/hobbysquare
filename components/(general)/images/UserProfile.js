@@ -1,6 +1,6 @@
 import { classnames, getPlaceholderImage } from "@/helpers"
 
-const UserProfile = ({ width = "max-w-[40px]" }) => {
+const UserProfile = ({ width = "max-w-[40px]", user }) => {
     return (
         <div
             className={classnames(
@@ -13,7 +13,10 @@ const UserProfile = ({ width = "max-w-[40px]" }) => {
                     "w-full block mx-auto rounded-full overflow-hidden"
                 )}
             >
-                <img alt={"Placeholder Image"} src={getPlaceholderImage()} />
+                <img
+                    alt={"Placeholder Image"}
+                    src={user ? user.data.image : getPlaceholderImage()}
+                />
             </picture>
         </div>
     )

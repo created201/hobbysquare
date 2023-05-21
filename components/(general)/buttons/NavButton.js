@@ -10,7 +10,6 @@ const NavButton = ({ user }) => {
             >
                 {user ? (
                     <>
-                        <span>DashBoard</span>
                         <AiOutlineFundView
                             size={26}
                             className="text-amber-500"

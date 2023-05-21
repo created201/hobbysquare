@@ -2,7 +2,7 @@ import { BsInstagram, BsGithub, BsTwitter } from "react-icons/bs"
 
 const FooterLayout = () => {
     return (
-        <footer className="w-full bg-theme-gray text-theme-white border-t border-theme-gray/5">
+        <footer className="w-full relative z-10 bg-theme-gray text-theme-white border-t border-theme-gray/5">
             <section className="flex flex-col gap-y-8 lg:gap-y-12 px-8 2xl:px-0 py-8 lg:py-24 lg:items-center w-full max-w-cutoff mx-auto">
                 <div className="w-full flex flex-col lg:items-center gap-y-6 pb-8 lg:pb-0 border-b border-theme-dark/25 lg:border-none">
                     <div className="flex items-center gap-x-4 relative">
