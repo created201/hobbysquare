@@ -38,23 +38,23 @@ const nextAuthOptions = {
 
             return Promise.resolve(true)
         },
-        // async session(params) {
-        //     // try {
-        //     //     const user = await $.server.users.getOne(params.token._id)
-        //     //     params.session.user = params.session.user
-        //     // } catch (error) {
-        //     //     console.log("--- NEXTAUTH USER CALLBACK SESSION ERROR ---")
-        //     //     console.error(error)
+        async session(params) {
+            // try {
+            //     const user = await $.server.users.getOne(params.token._id)
+            //     params.session.user = params.session.user
+            // } catch (error) {
+            //     console.log("--- NEXTAUTH USER CALLBACK SESSION ERROR ---")
+            //     console.error(error)
 
-        //     //     return Promise.resolve(false)
-        //     // }
+            //     return Promise.resolve(false)
+            // }
 
-        //     return Promise.resolve(params.session)
-        // },
+            return Promise.resolve(params.session)
+        },
     },
     secret: process.env.NEXTAUTH_SECRET,
 
-    debug: true,
+    // debug: true,
 }
 
 export default NextAuth(nextAuthOptions)
