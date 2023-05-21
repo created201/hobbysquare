@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import {useState} from 'react'
+import { useState } from "react"
 
 const UserProfile = dynamic(() => import("@/(general)/images/UserProfile"))
 const Modal = dynamic(() => import("@/(dashboard)/modals/Modal"))
@@ -70,7 +70,7 @@ const Feed = ({ _id, data }) => {
                             {skillLevel}
                         </p>
                     </div>
-                    <button 
+                    <button
                         className="rounded-full px-6 py-2.5 font-medium text-lg text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 ring-2 ring-transparent transition-all duration-[0.65s] ease-in-out lg:hover:ring-pink-500 lg:hover:from-transparent lg:hover:via-transparent lg:hover:to-transparent lg:hover:text-pink-500"
                         onClick={handleSendInterest}
                     >
@@ -79,9 +79,8 @@ const Feed = ({ _id, data }) => {
                 </div>
             </div>
 
-
             {/* Modal For Sending Interest (Email) */}
-            <Modal show={modalShow}/>
+            <Modal show={modalShow} handleClick={handleSendInterest} />
         </>
     )
 }
