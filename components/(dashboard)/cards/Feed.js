@@ -21,6 +21,9 @@ const Feed = ({ _id, data }) => {
                         {title}
                     </h3>
                 </div>
+                <p className="font-light text-theme-gray/75 mb-6">
+                    {description}
+                </p>
                 <div className="my-[0.5rem] flex flex-col gap-y-2.5">
                     <p className="text-sm grid grid-cols-12 lg:flex flex-row items-start gap-x-4 lg:gap-x-2 lg:justify-start lg:items-start">
                         <strong className="col-span-3 w-full lg:w-[75px] flex items-center lg:flex-row justify-center px-2 py-1 rounded-full text-sm  bg-theme-dark text-theme-white font-light">
@@ -47,8 +50,6 @@ const Feed = ({ _id, data }) => {
                         </span>
                     </p>
                 </div>
-
-                <p className="font-light text-theme-gray/75">{description}</p>
             </div>
 
             {/* Profile Section */}
@@ -60,7 +61,7 @@ const Feed = ({ _id, data }) => {
                         {skillLevel}
                     </p>
                 </div>
-                <button className="rounded-full px-6 py-2.5 font-medium text-lg text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 ring-2 ring-transparent transition-all duration-[0.45s] ease-in-out lg:hover:ring-pink-500 lg:hover:from-transparent lg:hover:via-transparent lg:hover:to-transparent lg:hover:text-pink-500">
+                <button className="rounded-full px-6 py-2.5 font-medium text-lg text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 ring-2 ring-transparent transition-all duration-[0.65s] ease-in-out lg:hover:ring-pink-500 lg:hover:from-transparent lg:hover:via-transparent lg:hover:to-transparent lg:hover:text-pink-500">
                     Send Interest
                 </button>
             </div>

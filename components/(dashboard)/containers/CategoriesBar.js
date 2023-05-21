@@ -9,7 +9,7 @@ const CategoriesBar = ({ selectedCategory, categories, onSelect }) => {
     return (
         <article
             className={classnames(
-                "w-full overflow-x-scroll flex flex-col gap-y-8 lg:col-span-4"
+                "w-full overflow-x-scroll flex flex-col gap-y-8 lg:col-span-4 lg:p-8 lg:border lg:rounded-md lg:h-max lg:sticky lg:top-20"
             )}
         >
             <h3 className="hidden lg:block font-bold text-2xl">Categories</h3>

@@ -17,6 +17,13 @@ const Feeds = ({ feeds }) => {
                                     key={idx}
                                 />
                             ))}
+                            {feeds.map((feed, idx) => (
+                                <Feed
+                                    data={feed.data}
+                                    _id={feed._id}
+                                    key={idx}
+                                />
+                            ))}
                         </ul>
                     )}
                     {feeds.length === 0 && (

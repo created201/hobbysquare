@@ -17,6 +17,8 @@ module.exports = {
             },
             transitionProperty: {
                 smooth: "all 0.65s cubic-bezier(0.19, 1, 0.22, 1)",
+                // smooth: "all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                // smooth: "all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
             },
         },
     },
