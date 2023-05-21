@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import "../styles/tailwind.css"
 import { AnimatePresence } from "framer-motion"
+import { SessionProvider } from "next-auth/react"
 
 const App = (props) => {
     const { Component, pageProps, router } = props
@@ -11,7 +12,9 @@ const App = (props) => {
             initial={false}
             onExitComplete={() => window.scrollTo(0, 0)}
         >
-            {getLayout(<Component {...pageProps} key={router.asPath} />)}
+            <SessionProvider session={pageProps.session}>
+                {getLayout(<Component {...pageProps} key={router.asPath} />)}
+            </SessionProvider>
         </AnimatePresence>
     )
 }

@@ -1,7 +1,11 @@
 import { classnames } from "@/helpers"
+import { useSession } from "next-auth/react"
 import Link from "next/link"
+import { FiArrowRight } from "react-icons/fi"
 
 const MobileNavToggle = ({ show }) => {
+    const { data } = useSession()
+
     return (
         <div
             className={classnames(
@@ -11,10 +15,31 @@ const MobileNavToggle = ({ show }) => {
                     : "-right-full -right-y-full"
             )}
         >
-            <Link href="/">Home</Link>
-            <Link href="/">Login</Link>
-            <Link href="/">Create Post</Link>
-            <Link href="/">My Profile</Link>
+            <section className="p-8 w-full flex flex-col gap-y-4">
+                <Link
+                    href="/"
+                    className="w-full flex items-center justify-between gap-x-4 font0medium"
+                >
+                    <span>Home</span>
+                    <FiArrowRight />
+                </Link>
+                {!data && (
+                    <Link
+                        href="/login"
+                        className="w-full flex items-center justify-between gap-x-4 font0medium"
+                    >
+                        <span>Login</span>
+                        <FiArrowRight />
+                    </Link>
+                )}
+                <Link
+                    href="/posts/create"
+                    className="w-full flex items-center justify-between gap-x-4 font0medium"
+                >
+                    <span>Create A Post</span>
+                    <FiArrowRight />
+                </Link>
+            </section>
         </div>
     )
 }

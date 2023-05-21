@@ -6,7 +6,7 @@ const Modal = ({ show, onClose, onSendConfirm }) => {
             {show && (
                 <>
                     <aside className="h-screen fixed w-full left-0 top-0 z-40 bg-theme-dark/10 backdrop-blur-md" />
-                    <section className="flex flex-col justify-center fixed left-1/2 top-1/2 -translate-y-1/2 transform -translate-x-1/2  z-50 p-8 border-solid border bg-theme-white rounded-md shadow-xl shadow-theme-dark/25 text-center w-[85%] max-w-md mx-auto">
+                    <section className="flex flex-col justify-center fixed left-1/2 top-1/2 -translate-y-1/2 transform -translate-x-1/2 z-50 p-8 border-solid border bg-theme-white rounded-md shadow-xl shadow-theme-dark/25 text-center w-[85%] max-w-md mx-auto">
                         <div className="flex flex-col items-center">
                             <AiOutlineMail className="w-[8rem] h-[8rem]" />
                             <p className="font-bold text-3xl px-2 mb-1">

@@ -4,9 +4,13 @@ import { query } from "../query"
 class Posts extends Query {
     constructor(query) {
         super(query)
+        this.name = "posts"
     }
 
-    async create() {}
+    async create(_id, data) {
+        const query = this.query(this.name)
+        console.log(query, data)
+    }
     async getOne() {}
     async getAll() {}
     async update() {}
@@ -15,6 +19,6 @@ class Posts extends Query {
     async sendEmail() {}
 }
 
-const serverposts = new Posts(query())
+const serverposts = new Posts(query)
 
 export { serverposts }
