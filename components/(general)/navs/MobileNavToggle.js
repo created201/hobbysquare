@@ -1,11 +1,8 @@
 import { classnames } from "@/helpers"
-import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { FiArrowRight } from "react-icons/fi"
 
 const MobileNavToggle = ({ show }) => {
-    const { data } = useSession()
-
     return (
         <div
             className={classnames(
@@ -23,15 +20,20 @@ const MobileNavToggle = ({ show }) => {
                     <span>Home</span>
                     <FiArrowRight />
                 </Link>
-                {!data && (
-                    <Link
-                        href="/login"
-                        className="w-full flex items-center justify-between gap-x-4 font0medium"
-                    >
-                        <span>Login</span>
-                        <FiArrowRight />
-                    </Link>
-                )}
+                <Link
+                    href="/login"
+                    className="w-full flex items-center justify-between gap-x-4 font0medium"
+                >
+                    <span>Login</span>
+                    <FiArrowRight />
+                </Link>
+                <Link
+                    href="/dashboard"
+                    className="w-full flex items-center justify-between gap-x-4 font0medium"
+                >
+                    <span>Dashboard</span>
+                    <FiArrowRight />
+                </Link>
                 <Link
                     href="/posts/create"
                     className="w-full flex items-center justify-between gap-x-4 font0medium"
