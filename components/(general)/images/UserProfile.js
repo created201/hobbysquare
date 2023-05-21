@@ -1,16 +1,15 @@
-const { default: Image } = require("next/image")
+import { classnames, getPlaceholderImage } from "@/helpers"
 
-const UserProfile = ({ src }) => {
+const UserProfile = ({ width = "max-w-[40px]" }) => {
     return (
-        <Image
-            src={src}
-            alt="User Pic"
-            className={
-                src
-                    ? "rounded-full w-7 h-7 xl:w-10 xl:h-10 border-solid border-2"
-                    : "rounded-full w-7 h-7 xl:w-10 xl:h-10 border-solid border-2 bg-emerald-100"
-            }
-        />
+        <picture
+            className={classnames(
+                "w-full block mx-auto rounded-full overflow-hidden",
+                width
+            )}
+        >
+            <img src={getPlaceholderImage()} alt="User Pic" />
+        </picture>
     )
 }
 

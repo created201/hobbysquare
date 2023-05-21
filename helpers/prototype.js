@@ -15,5 +15,6 @@ __Helper__.prototype.alertButtonNotAvailable =
     __PlaceHolders__.alertButtonNotAvailable
 __Helper__.prototype.getCategories = __Data__.getCategories
 __Helper__.prototype.getSkillLevels = __Data__.getSkillLevels
+__Helper__.prototype.getPlaceholderImage = __Data__.getPlaceholderImage
 
 export { __Helper__ }

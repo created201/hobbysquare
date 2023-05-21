@@ -4,7 +4,7 @@ import dynamic from "next/dynamic"
 const ExpandProfile = dynamic(() =>
     import("@/(dashboard)/buttons/ExpandProfile")
 )
-const UserProfile = dynamic(() => import("@/(dashboard)/cards/UserProfile"))
+const UserProfile = dynamic(() => import("@/(general)/images/UserProfile"))
 
 const UserProfileBar = ({ onExpand, user, expand }) => {
     console.log(user)
@@ -39,7 +39,7 @@ const UserProfileBar = ({ onExpand, user, expand }) => {
                     }
                 />
             </div>
-            <UserProfile />
+            <UserProfile width={expand ? "max-w-[225px]" : "max-w-[40px]"} />
         </article>
     )
 }
