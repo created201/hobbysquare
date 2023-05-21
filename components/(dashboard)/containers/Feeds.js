@@ -3,6 +3,9 @@ import dynamic from "next/dynamic"
 const Feed = dynamic(() => import("@/(dashboard)/cards/Feed"))
 
 const Feeds = ({ feeds }) => {
+
+    
+
     return (
         <article className="w-full flex flex-col gap-y-8">
             <h3 className="font-bold text-2xl">Feeds</h3>
