@@ -9,11 +9,13 @@ const PrimaryLayout = dynamic(() => import("@/(general)/layouts/PrimaryLayout"))
 const LoginPage = () => {
     return (
         // LoginPage Content
-        <div className="h-screen flex flex-col justify-center items-center w-full bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500">
+        <div className="h-screen flex flex-col justify-center items-center w-full bg-theme-white">
             <section className="px-8 2xl:px-0 max-w-cutoff mx-auto w-full">
                 {/*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */}
-                <div className="flex flex-col border-solid border-2 rounded-md h-full max-h-md w-full max-w-md mx-auto px-8 py-10 bg-theme-white gap-y-6 shadow-[0_2px_8px_0_rgba(99,99,99,0.2)]">
-                    <h4 className="font-bold text-2xl mb-2">Login</h4>
+                <div className="flex flex-col h-full max-h-md w-full max-w-md mx-auto bg-theme-white gap-y-6">
+                    <h4 className="font-medium text-center text-lg lg:text-2xl mb-2">
+                        Find Hobby Mates By Signing In Now!
+                    </h4>
                     <div>
                         <input
                             type="text"
