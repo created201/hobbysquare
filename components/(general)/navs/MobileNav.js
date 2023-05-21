@@ -7,7 +7,7 @@ const MobileMenuButton = dynamic(() =>
 
 const MobileNav = ({ onClick, show }) => {
     return (
-        <nav className="fixed top-4 right-4 flex lg:hidden items-center gap-x-2 z-50">
+        <nav className="fixed top-4 right-4 flex lg:hidden items-center gap-x-2 z-50 transition-smooth">
             <UserProfile src="" />
             <MobileMenuButton onClick={onClick} show={show} />
         </nav>

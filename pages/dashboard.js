@@ -36,7 +36,7 @@ const DashboardPage = () => {
             >
                 <div
                     className={classnames(
-                        "w-full grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-12 px-4 2xl:px-8 py-20 bg-theme-white text-theme-gray",
+                        "w-full grid grid-cols-1 gap-8 lg:gap-16 lg:grid-cols-12 px-4 2xl:px-8 py-20 lg:py-24 bg-theme-white text-theme-gray",
                         expandProfile ? "lg:col-span-8" : "lg:col-span-11"
                     )}
                 >

@@ -7,10 +7,10 @@
             "@/(login)/*": ["__trash__/(login)/*"],
             "@/(account)/*": ["components/(account)/*"],
             "@/(dashboard)/*": ["components/(dashboard)/*"],
-            "@/(post)/*": ["components/(post)/*"],
+            "@/(posts)/*": ["components/(posts)/*"],
             "@/(contact)/*": ["components/(contact)/*"],
             "@/helpers": ["helpers/index.js"],
-            "@/const": ["const/index.js"],
+            "@/hooks": ["hooks/index.js"],
             "@/server/*": ["libs/server/*"],
             "@/client/*": ["libs/client/*"]
         }

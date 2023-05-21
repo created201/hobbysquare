@@ -7,7 +7,7 @@ const GetStartedButton = ({ user }) => {
                 onClick={
                     user ? alertButtonNotAvailable : alertButtonNotAvailable
                 }
-                className="shadow-[0_1px_8px_0_rgba(99,99,99,0.2)] px-8 py-3 lg:px-10 lg:py-4 w-[75%] max-w-[375px] rounded-full bg-theme-gray text-theme-white  border border-transparent lg:hover:border-theme-gray lg:hover:bg-theme-white lg:hover:text-theme-gray font-medium text-xl lg:text-2xl"
+                className="shadow-xl px-8 py-3 lg:px-10 lg:py-4 w-[75%] max-w-[375px] rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 text-theme-white font-medium text-xl lg:text-2xl transition-smooth"
             >
                 Get Started
             </button>

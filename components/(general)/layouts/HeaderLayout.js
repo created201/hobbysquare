@@ -15,7 +15,7 @@ const HeaderLayout = () => {
     }
 
     return (
-        <header className="w-full fixed top-0 left-0 z-40 bg-theme-white/95 text-theme-dark">
+        <header className="w-full fixed top-0 left-0 z-40 bg-theme-white/90 backdrop-blur-sm text-theme-dark">
             <section className="relative w-full mx-auto px-4 py-4 2xl:px-8 flex justify-between items-center">
                 <LogoLink />
                 <div className="flex">
@@ -26,10 +26,10 @@ const HeaderLayout = () => {
                 {/* Mobile Version Navigation */}
                 <div
                     className={classnames(
-                        "xl:hidden absolute left-0 z-40 transform bg-white transition-all duration-[0.75s] ease-in-out  h-screen w-full flex flex-col justify-center items-center",
+                        "xl:hidden absolute top-0 z-40 transform bg-white transition-smooth h-screen w-[85%] flex flex-col justify-center items-center",
                         navShow
-                            ? "-top-0 -translate-y-0"
-                            : "-top-full -translate-y-full"
+                            ? "-right-0 -right-y-0 shadow-xl"
+                            : "-right-full -right-y-full"
                     )}
                 >
                     <Link href="/">Home</Link>

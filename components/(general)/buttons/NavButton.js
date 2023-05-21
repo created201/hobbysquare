@@ -1,13 +1,24 @@
 import { alertButtonNotAvailable } from "@/helpers"
+import { AiOutlineFundView } from "react-icons/ai"
 
 const NavButton = ({ user }) => {
     return (
         <>
             <button
                 onClick={alertButtonNotAvailable}
-                className="shadow-[0_1px_8px_0_rgba(99,99,99,0.2)] px-6 py-2.5 rounded-full bg-theme-gray text-theme-white  border border-transparent lg:hover:border-theme-gray lg:hover:bg-theme-white lg:hover:text-theme-gray font-medium"
+                className="transition-smooth font-medium flex items-center gap-x-2 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500"
             >
-                {user ? "My Dashboard" : "Sign In"}
+                {user ? (
+                    <>
+                        <span>DashBoard</span>
+                        <AiOutlineFundView
+                            size={26}
+                            className="text-amber-500"
+                        />
+                    </>
+                ) : (
+                    "Sign In"
+                )}
             </button>
         </>
     )
