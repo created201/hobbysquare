@@ -1,11 +1,18 @@
 import { alertButtonNotAvailable } from "@/helpers"
 import dynamic from "next/dynamic"
+import { useRouter } from "next/router"
 
 import { BsFacebook, BsGoogle, BsGithub } from "react-icons/bs"
 
 const PrimaryLayout = dynamic(() => import("@/(general)/layouts/PrimaryLayout"))
 
 const LoginPage = () => {
+    const router = useRouter()
+
+    function onLogin() {
+        router.push("/dashboard")
+    }
+
     return (
         // LoginPage Content
         <div className="h-screen flex flex-col justify-center items-center w-full bg-theme-white">
@@ -31,7 +38,10 @@ const LoginPage = () => {
                         />
                         <div className="h-[1.5px] w-full bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500"></div>
                     </div>
-                    <button className="rounded-full px-8 py-3 font-medium text-lg text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 ring-2 ring-transparent transition-all duration-[0.65s] ease-in-out lg:hover:ring-pink-500 lg:hover:from-transparent lg:hover:via-transparent lg:hover:to-transparent lg:hover:text-pink-500">
+                    <button
+                        onClick={onLogin}
+                        className="rounded-full px-8 py-3 font-medium text-lg text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 ring-2 ring-transparent transition-all duration-[0.65s] ease-in-out lg:hover:ring-pink-500 lg:hover:from-transparent lg:hover:via-transparent lg:hover:to-transparent lg:hover:text-pink-500"
+                    >
                         Login
                     </button>
 

@@ -23,42 +23,40 @@ class __Data__ {
     static getMockFeeds() {
         const mockFeeds = [
             {
-                _id: "Jin",
+                _id: "1",
                 data: {
-                    title: "I want to meet Mr. Butner",
-                    description:
-                        "I love Mr.Butner. He teaches ECS50, ECS154A, and ECS32B. It is Easy A+ for us.",
+                    title: "I am looking for a tennis partner!",
+                    description: "I have been playing tennis for three years.",
                     when: "22 May 2023",
-                    where: "Memorial Union",
-                    what: "Study Assembly",
+                    where: "MU Tennis Court",
+                    what: "Tennis",
                     skillLevel: "intermediate",
-                    category: "games",
+                    category: "sports",
                 },
             },
             {
-                _id: "Hanuel",
+                _id: "2",
                 data: {
-                    title: "Le Sserafim Hello",
-                    description:
-                        "I love Le Sserafim Hello. They teach us ML/AI and Machine Machine Learning",
+                    title: "Le Sserafim Cover Dance",
+                    description: "I wanna learn Le Sserafim's dances.",
                     when: "1 Feb 2024",
-                    where: "Shields Library",
-                    what: "Listen to their music",
-                    skillLevel: "intermediate",
+                    where: "Arc Studio",
+                    what: "Cover Dance",
+                    skillLevel: "beginner",
                     category: "music",
                 },
             },
             {
-                _id: "Jaehong",
+                _id: "3",
                 data: {
-                    title: "Shell Scripting with Eating Cookies",
+                    title: "Cooking Korean Style Dinner",
                     description:
-                        "I would like to make shell scriting languages using cookies and assembly and water",
-                    when: "Every Monday",
-                    where: "My Home",
-                    what: "Play Soccer",
-                    skillLevel: "advanced",
-                    category: "sports",
+                        "I really want to cook Korean dishes for dinner.",
+                    when: "Every Saturday",
+                    where: "My Place",
+                    what: "Cooking Food",
+                    skillLevel: "intermediate",
+                    category: "cooking",
                 },
             },
         ]
