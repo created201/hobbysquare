@@ -10,28 +10,57 @@ const Feed = ({ _id, data }) => {
     // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     return (
-        <div className="grid grid-cols-6 relative border-solid border-2 gap-x-5 p-4 h-full w-ful rounded-md hover:shadow-[0_2px_8px_0_rgba(99,99,99,0.2)]">
+        <div className="flex flex-col-reverse lg:grid grid-cols-6 relative border-solid border-2 gap-x-5 p-4 h-full w-ful rounded-md hover:shadow-[0_2px_8px_0_rgba(99,99,99,0.2)]">
             {/* Description */}
             <div className="col-span-3 sm:col-span-4 p-2">
-                <h3 className="font-bold text-2xl">{title}</h3>
-                <div className="my-[0.5rem]">
-                    <h4 className="text-sm">{what}</h4>
-                    <p className="text-sm">On: {when}</p>
-                    <p className="text-sm">At: {where}</p>
-                    <p className="text-sm capitalize">Category: {category}</p>
+                <div className="flex flex-col gap-x-2 mb-3">
+                    <p className="text-sm font-medium capitalize bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500">
+                        {category}
+                    </p>
+                    <h3 className="font-bold text-2xl text-theme-dark">
+                        {title}
+                    </h3>
+                </div>
+                <div className="my-[0.5rem] flex flex-col gap-y-2.5">
+                    <p className="text-sm grid grid-cols-12 lg:flex flex-row items-start gap-x-4 lg:gap-x-2 lg:justify-start lg:items-start">
+                        <strong className="col-span-3 w-full lg:w-[75px] flex items-center lg:flex-row justify-center px-2 py-1 rounded-full text-sm  bg-theme-dark text-theme-white font-light">
+                            What
+                        </strong>
+                        <span className="col-span-9 text-base font-medium border-theme-gray">
+                            {what}
+                        </span>
+                    </p>
+                    <p className="text-sm grid grid-cols-12 lg:flex flex-row items-start gap-x-4 lg:gap-x-2 lg:justify-start lg:items-start">
+                        <strong className="col-span-3 w-full lg:w-[75px] flex items-center lg:flex-row justify-center px-2 py-1 rounded-full text-sm  bg-theme-dark text-theme-white font-light">
+                            When
+                        </strong>
+                        <span className="col-span-9 text-base font-medium border-theme-gray">
+                            {when}
+                        </span>
+                    </p>
+                    <p className="text-sm grid grid-cols-12 lg:flex flex-row items-start gap-x-4 lg:gap-x-2 lg:justify-start lg:items-start">
+                        <strong className="col-span-3 w-full lg:w-[75px] flex items-center lg:flex-row justify-center px-2 py-1 rounded-full text-sm  bg-theme-dark text-theme-white font-light">
+                            Where
+                        </strong>
+                        <span className="col-span-9 text-base font-medium border-theme-gray">
+                            {where}
+                        </span>
+                    </p>
                 </div>
 
-                <p>{description}</p>
+                <p className="font-light text-theme-gray/75">{description}</p>
             </div>
 
             {/* Profile Section */}
-            <div className="col-span-3 sm:col-span-2 p-2 flex flex-col justify-center gap-y-1">
-                <h3 className="text-xl font-bold text-center">{_id}</h3>
-                <UserProfile width="max-w-[100px]" />
-                <div className="flex flex-col items-center">
-                    <p className="text-center capitalize">{skillLevel}</p>
+            <div className="col-span-3 sm:col-span-2 p-2 flex flex-col justify-center">
+                {/* <h3 className="text-xl font-bold text-center mb-1">{_id}</h3> */}
+                <UserProfile width="max-w-[100px] mb-1" />
+                <div className="flex flex-col items-center mb-3">
+                    <p className="text-center capitalize text-theme-gray/75">
+                        {skillLevel}
+                    </p>
                 </div>
-                <button className="rounded-full px-2 py-1 text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500">
+                <button className="rounded-full px-6 py-2.5 font-medium text-lg text-[#ffffff] bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 ring-2 ring-transparent transition-all duration-[0.45s] ease-in-out lg:hover:ring-pink-500 lg:hover:from-transparent lg:hover:via-transparent lg:hover:to-transparent lg:hover:text-pink-500">
                     Send Interest
                 </button>
             </div>
