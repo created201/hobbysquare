@@ -20,11 +20,6 @@ export function __getRoutes__() {
             icon: (icon) => icon,
             isCurrentRoute: (routerPathname) => routerPathname === "/account",
         },
-        contact: {
-            href: "/contact",
-            icon: (icon) => icon,
-            isCurrentRoute: (routerPathname) => routerPathname === "/contact",
-        },
         create: {
             href: "/posts/create",
             icon: (icon) => icon,
@@ -39,5 +34,6 @@ export function __getRoutes__() {
     return {
         keys,
         values,
+        routes,
     }
 }

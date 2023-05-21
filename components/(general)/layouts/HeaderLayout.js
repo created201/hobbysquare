@@ -1,17 +1,29 @@
+import { getRoutes } from "@/helpers"
 import dynamic from "next/dynamic"
-import Link from "next/link"
+import { useRouter } from "next/router"
 import { useState } from "react"
-import { classnames } from "@/helpers"
-
 const LogoLink = dynamic(() => import("@/(general)/links/LogoLink"))
 const MobileNav = dynamic(() => import("@/(general)/navs/MobileNav"))
+const MobileNavToggle = dynamic(() =>
+    import("@/(general)/navs/MobileNavToggle")
+)
 const DesktopNav = dynamic(() => import("@/(general)/navs/DesktopNav"))
 
 const HeaderLayout = () => {
-    const [navShow, setNavShow] = useState(false)
+    const router = useRouter()
 
-    function handleNavButtonClick() {
-        setNavShow(!navShow)
+    const { keys, routes } = getRoutes()
+
+    const [showMobileNav, setShowMobileNav] = useState(false)
+
+    function getCurrentRoute() {
+        return Object.values(routes).find(
+            (route) => route.href === router.pathname
+        )
+    }
+
+    function onToggleNav() {
+        setShowMobileNav(!showMobileNav)
     }
 
     return (
@@ -19,23 +31,13 @@ const HeaderLayout = () => {
             <section className="relative w-full mx-auto px-4 py-4 2xl:px-8 flex justify-between items-center">
                 <LogoLink />
                 <div className="flex">
-                    <MobileNav onClick={handleNavButtonClick} show={navShow} />
-                    <DesktopNav />
-                </div>
-
-                {/* Mobile Version Navigation */}
-                <div
-                    className={classnames(
-                        "xl:hidden absolute top-0 z-40 transform bg-white transition-smooth h-screen w-[85%] flex flex-col justify-center items-center",
-                        navShow
-                            ? "-right-0 -right-y-0 shadow-xl"
-                            : "-right-full -right-y-full"
-                    )}
-                >
-                    <Link href="/">Home</Link>
-                    <Link href="/">Login</Link>
-                    <Link href="/">Create Post</Link>
-                    <Link href="/">My Profile</Link>
+                    <MobileNav onClick={onToggleNav} show={showMobileNav} />
+                    <MobileNavToggle show={showMobileNav} />
+                    <DesktopNav
+                        routeNames={keys}
+                        routes={routes}
+                        currentRoute={getCurrentRoute()}
+                    />
                 </div>
             </section>
         </header>
