@@ -1,5 +1,5 @@
 /** connect to database */
-import { clientPromise } from "."
+import { clientPromise } from "./db"
 
 async function query(doc) {
     const client = await clientPromise
