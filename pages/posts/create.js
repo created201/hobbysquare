@@ -27,6 +27,12 @@ const CreatePostPage = () => {
     const [category, setCategory] = useState(categories[0])
     const [skillLevel, setSkillLevel] = useState(skillLevels[0])
 
+    const [showPreview, setShowPreview] = useState(true)
+
+    function onTogglePreview() {
+        setShowPreview(!showPreview)
+    }
+
     async function onSubmit(e) {
         e.preventDefault()
 
@@ -142,72 +148,98 @@ const CreatePostPage = () => {
                     </section>
                 </form>
 
-                <article className="lg:col-span-7 p-8 border w-full overflow-hidden h-full lg:h-max lg:sticky lg:top-20 flex flex-col justify-start items-start">
-                    {[title, description, what, when, where].find(
-                        (_) => _.value
-                    ) && (
-                        <>
-                            <UserProfile width="max-w-[50px] mx-0 mb-4" />
-                            {title.value && (
-                                <div className="flex flex-col gap-y-1 mb-2">
-                                    <div className="flex items-center gap-x-2">
-                                        <TextInputPreview
-                                            label={"title"}
-                                            font="font-semibold text-xl text-theme-dark"
-                                            margin="mb-0"
-                                            value={title.value}
-                                        />
-                                        {category && (
-                                            <span className="capitalize text-sm font-medium px-3 py-0.5 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 text-theme-white">
-                                                {category}
-                                            </span>
+                {showPreview && (
+                    <article
+                        className={classnames(
+                            " lg:col-span-7 p-8 border w-full lg:overflow-hidden lg:h-max lg:sticky lg:top-20 flex flex-col justify-start items-start"
+                        )}
+                    >
+                        {[title, description, what, when, where].find(
+                            (_) => _.value
+                        ) && (
+                            <>
+                                <div
+                                    className={classnames(
+                                        "fixed lg:hidden z-30 bottom-0 left-0 w-full px-8",
+                                        showPreview ? "py-12" : "py-8"
+                                    )}
+                                >
+                                    <button
+                                        onClick={onTogglePreview}
+                                        className={classnames(
+                                            "w-full block z-10 px-8 py-3 text-theme-white rounded-md font-medium text-lg shadow-2xl shadow-theme-dark/50",
+                                            showPreview
+                                                ? "bg-pink-500"
+                                                : "bg-theme-dark"
+                                        )}
+                                    >
+                                        {showPreview
+                                            ? "Hide Preview"
+                                            : "Show Preview"}
+                                    </button>
+                                </div>
+                                <UserProfile width="max-w-[50px] mb-4" />
+                                {title.value && (
+                                    <div className="flex flex-col gap-y-1 mb-2">
+                                        <div className="flex items-center gap-x-2">
+                                            <TextInputPreview
+                                                label={"title"}
+                                                font="font-semibold text-xl text-theme-dark"
+                                                margin="mb-0"
+                                                value={title.value}
+                                            />
+                                            {category && (
+                                                <span className="capitalize text-sm font-medium px-3 py-0.5 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-amber-500 text-theme-white">
+                                                    {category}
+                                                </span>
+                                            )}
+                                        </div>
+                                        {skillLevel && category && (
+                                            <p className="text-sm italic text-slate-500">
+                                                I am {skillLevel} at {category}
+                                            </p>
                                         )}
                                     </div>
-                                    {skillLevel && category && (
-                                        <p className="text-sm italic text-slate-500">
-                                            I am {skillLevel} at {category}
-                                        </p>
-                                    )}
-                                </div>
-                            )}
-                            {description.value && (
-                                <TextInputPreview
-                                    label={"description"}
-                                    font="font-base text-base text-theme-gray/75"
-                                    margin="mb-4"
-                                    value={description.value}
-                                />
-                            )}
-                            {what.value && (
-                                <TextInputPreview
-                                    withLabel
-                                    label={"What"}
-                                    font="font-base text-base text-theme-gray/75"
-                                    margin="mb-4"
-                                    value={what.value}
-                                />
-                            )}
-                            {when.value && (
-                                <TextInputPreview
-                                    withLabel
-                                    label={"When"}
-                                    font="font-base text-base text-theme-gray/75"
-                                    margin="mb-4"
-                                    value={when.value}
-                                />
-                            )}
-                            {where.value && (
-                                <TextInputPreview
-                                    withLabel
-                                    label={"Where"}
-                                    font="font-base text-base text-theme-gray/75"
-                                    margin="mb-4"
-                                    value={where.value}
-                                />
-                            )}
-                        </>
-                    )}
-                </article>
+                                )}
+                                {description.value && (
+                                    <TextInputPreview
+                                        label={"description"}
+                                        font="font-base text-base text-theme-gray/75"
+                                        margin="mb-4"
+                                        value={description.value}
+                                    />
+                                )}
+                                {what.value && (
+                                    <TextInputPreview
+                                        withLabel
+                                        label={"What"}
+                                        font="font-base text-base text-theme-gray/75"
+                                        margin="mb-4"
+                                        value={what.value}
+                                    />
+                                )}
+                                {when.value && (
+                                    <TextInputPreview
+                                        withLabel
+                                        label={"When"}
+                                        font="font-base text-base text-theme-gray/75"
+                                        margin="mb-4"
+                                        value={when.value}
+                                    />
+                                )}
+                                {where.value && (
+                                    <TextInputPreview
+                                        withLabel
+                                        label={"Where"}
+                                        font="font-base text-base text-theme-gray/75"
+                                        margin="mb-4"
+                                        value={where.value}
+                                    />
+                                )}
+                            </>
+                        )}
+                    </article>
+                )}
             </section>
         </div>
     )
