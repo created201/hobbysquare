@@ -1,6 +1,6 @@
 class __Data__ {
     static getCategories() {
-        const categories = ["sports", "music", "games"]
+        const categories = ["music", "arts", "sports", "cooking", "games"]
         return categories
     }
 
