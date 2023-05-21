@@ -11,7 +11,7 @@
             "@/(contact)/*": ["components/(contact)/*"],
             "@/helpers": ["helpers/index.js"],
             "@/hooks": ["hooks/index.js"],
-            "@/libs": ["libs/index.js"]
+            "@/libs": ["libs/libs/index.js"]
         }
     }
 }
