@@ -3,6 +3,7 @@ import UserProfile from "../images/UserProfile"
 import Link from "next/link"
 import { classnames } from "@/helpers"
 import { useRouter } from "next/router"
+import { signOut } from "next-auth/react"
 
 const NavButton = dynamic(() => import("@/(general)/buttons/NavButton"))
 
@@ -42,8 +43,18 @@ const DesktopNav = ({ routeNames, routes, currentRoute, user }) => {
                         Login
                     </Link>
                 )}
+                {user && (
+                    <button
+                        onClick={signOut}
+                        className={classnames(
+                            "capitalize transition-smooth text-pink-500 hover:opacity-75"
+                        )}
+                    >
+                        Sign out
+                    </button>
+                )}
             </ul>
-            <UserProfile />
+            <UserProfile user={user} />
             <NavButton user="jin lee" />
         </nav>
     )

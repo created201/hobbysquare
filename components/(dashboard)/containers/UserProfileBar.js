@@ -7,7 +7,6 @@ const ExpandProfile = dynamic(() =>
 const UserProfile = dynamic(() => import("@/(general)/images/UserProfile"))
 
 const UserProfileBar = ({ onExpand, user, expand }) => {
-    console.log(user)
     return (
         <article
             className={classnames(
@@ -17,7 +16,7 @@ const UserProfileBar = ({ onExpand, user, expand }) => {
                     : "lg:col-span-1 gap-y-4 lg:border-slate-400/40"
             )}
         >
-            <div className="lg:sticky lg:top-20 flex flex-col gap-y-6">
+            <div className="lg:sticky lg:top-20 flex flex-col gap-y-4">
                 <div
                     className={classnames(
                         "flex items-center",
@@ -25,9 +24,12 @@ const UserProfileBar = ({ onExpand, user, expand }) => {
                     )}
                 >
                     {expand && (
-                        <h5 className="font-semibold text-xl">
-                            Hi, James Johns
-                        </h5>
+                        <div className="flex items-center gap-x-4">
+                            <UserProfile user={user} width={"max-w-[40px]"} />
+                            <h5 className="font-semibold text-xl">
+                                Hi, {user.data.name}
+                            </h5>
+                        </div>
                     )}
                     <ExpandProfile
                         expand={expand}
@@ -42,9 +44,7 @@ const UserProfileBar = ({ onExpand, user, expand }) => {
                         }
                     />
                 </div>
-                <UserProfile
-                    width={expand ? "max-w-[225px]" : "max-w-[40px]"}
-                />
+                {!expand && <UserProfile user={user} width={"max-w-[40px]"} />}
             </div>
         </article>
     )

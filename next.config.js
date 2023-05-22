@@ -4,7 +4,7 @@ const nextConfig = {
     trailingSlash: true,
 
     images: {
-        domains: [],
+        domains: ["lh3.googleusercontent.com"],
     },
 
     experimental: {},

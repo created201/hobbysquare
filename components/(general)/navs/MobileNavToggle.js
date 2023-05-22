@@ -1,4 +1,5 @@
 import { classnames } from "@/helpers"
+import { signOut } from "next-auth/react"
 import Link from "next/link"
 import { FiArrowRight } from "react-icons/fi"
 
@@ -44,13 +45,13 @@ const MobileNavToggle = ({ show, user }) => {
                     </Link>
                 )}
                 {user && (
-                    <Link
-                        href="/login"
+                    <button
+                        onClick={signOut}
                         className="w-full flex items-center justify-between gap-x-4 font0medium text-pink-500"
                     >
                         <span>Sign Out</span>
                         <FiArrowRight />
-                    </Link>
+                    </button>
                 )}
             </section>
         </div>

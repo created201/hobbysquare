@@ -5,6 +5,7 @@ import {
     getSkillLevels,
 } from "@/helpers"
 import { useInput } from "@/hooks"
+import { getSession } from "next-auth/react"
 import dynamic from "next/dynamic"
 import { useState } from "react"
 
@@ -16,7 +17,7 @@ const TextInputPreview = dynamic(() =>
     import("@/(posts)/texts/TextInputPreview")
 )
 
-const CreatePostPage = () => {
+const CreatePostPage = ({ user }) => {
     const categories = getCategories()
     const skillLevels = getSkillLevels()
 
@@ -42,7 +43,7 @@ const CreatePostPage = () => {
 
     return (
         <>
-            <HeaderLayout user={null} />
+            <HeaderLayout user={{ data: user }} />
             <div className="min-h-screen flex flex-col justify-center items-center">
                 <section className="px-8 py-20 2xl:px-0 max-w-[1096px] mx-auto w-full grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
                     <form
@@ -253,20 +254,20 @@ CreatePostPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
 
-export const getServerSideProps = (_context) => {
-    const user = null
+export const getServerSideProps = async (context) => {
+    const session = await getSession(context)
 
-    if (!user) {
+    if (!session) {
         return {
             redirect: {
-                destination: "/loign",
+                destination: "/login",
                 permenant: false,
             },
         }
     }
 
     return {
-        props: { user },
+        props: { user: session.user },
     }
 }
 

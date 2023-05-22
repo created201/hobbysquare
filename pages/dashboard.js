@@ -1,6 +1,7 @@
 import { classnames, getCategories, getMockFeeds } from "@/helpers"
 import { useState } from "react"
 import dynamic from "next/dynamic"
+import { getSession } from "next-auth/react"
 
 const HeaderLayout = dynamic(() => import("@/(general)/layouts/HeaderLayout"))
 const PrimaryLayout = dynamic(() => import("@/(general)/layouts/PrimaryLayout"))
@@ -13,7 +14,7 @@ const UserProfileBar = dynamic(() =>
     import("@/(dashboard)/containers/UserProfileBar")
 )
 
-const DashboardPage = () => {
+const DashboardPage = ({ user }) => {
     const [search, setSearch] = useState("")
     const [category, setCategory] = useState("")
     const [expandProfile, setExpandProfileBar] = useState(true)
@@ -28,7 +29,7 @@ const DashboardPage = () => {
 
     return (
         <>
-            <HeaderLayout user={null} />
+            <HeaderLayout user={{ data: user }} />
             <div className="min-h-screen flex flex-col justify-start items-center">
                 <section
                     className={classnames(
@@ -83,7 +84,7 @@ const DashboardPage = () => {
                     </div>
                     <UserProfileBar
                         expand={expandProfile}
-                        user={{}}
+                        user={{ data: user }}
                         onExpand={onExpandProfileBar}
                     />
                 </section>
@@ -95,10 +96,10 @@ const DashboardPage = () => {
 DashboardPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
 }
-export const getServerSideProps = (_context) => {
-    const user = null
+export const getServerSideProps = async (context) => {
+    const session = await getSession(context)
 
-    if (!user) {
+    if (!session) {
         return {
             redirect: {
                 destination: "/login",
@@ -108,7 +109,7 @@ export const getServerSideProps = (_context) => {
     }
 
     return {
-        props: { user },
+        props: { user: session.user },
     }
 }
 

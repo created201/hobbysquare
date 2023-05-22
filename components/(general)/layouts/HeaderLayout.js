@@ -37,7 +37,7 @@ const HeaderLayout = ({ user }) => {
                         onClick={onToggleNav}
                         show={showMobileNav}
                     />
-                    <MobileNavToggle show={showMobileNav} />
+                    <MobileNavToggle show={showMobileNav} user={user} />
                     <DesktopNav
                         user={user}
                         routeNames={keys}

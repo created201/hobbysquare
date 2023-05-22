@@ -1,3 +1,4 @@
+import { getSession } from "next-auth/react"
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import LandingBackground from "public/hobbysquare_landing.png"
@@ -9,10 +10,10 @@ const GetStartedButton = dynamic(() =>
 const MainText = dynamic(() => import("@/(landing)/texts/MainText"))
 const HeaderLayout = dynamic(() => import("@/(general)/layouts/HeaderLayout"))
 
-const IndexPage = () => {
+const IndexPage = ({ user }) => {
     return (
         <>
-            <HeaderLayout user={null} />
+            <HeaderLayout user={user ? { data: user } : null} />
             <div className="fixed top-0 z-0 left-0 overflow-hidden h-screen flex flex-col justify-end">
                 <Image
                     src={LandingBackground}
@@ -34,6 +35,14 @@ const IndexPage = () => {
 
 IndexPage.getLayout = (page) => {
     return <PrimaryLayout>{page}</PrimaryLayout>
+}
+
+export const getServerSideProps = async (context) => {
+    const session = await getSession(context)
+
+    return {
+        props: { user: session ? session.user : null },
+    }
 }
 
 export default IndexPage
