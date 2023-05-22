@@ -70,7 +70,9 @@ const LoginPage = () => {
 
                             <div className="flex flex-col justify-center gap-y-4">
                                 <button
-                                    onClick={() => onLogin("google")}
+                                    onClick={() => {
+                                        onLogin("google")
+                                    }}
                                     className="flex justify-center items-center gap-x-3 rounded-full px-8 py-3 lg:py-4 font-medium text-base text-theme-white bg-blue-500  transition-smooth lg:hover:opacity-60 lg:hover:text-theme-white"
                                 >
                                     <BsGoogle size={22} />

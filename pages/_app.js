@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion"
 import { SessionProvider } from "next-auth/react"
 
 const App = (props) => {
-    const { Component, pageProps, router } = props
+    const { Component, pageProps } = props
     const getLayout = Component.getLayout || ((_page) => _page)
     return (
         <AnimatePresence
@@ -13,7 +13,7 @@ const App = (props) => {
             onExitComplete={() => window.scrollTo(0, 0)}
         >
             <SessionProvider session={pageProps.session}>
-                {getLayout(<Component {...pageProps} key={router.asPath} />)}
+                {getLayout(<Component {...pageProps} />)}
             </SessionProvider>
         </AnimatePresence>
     )
