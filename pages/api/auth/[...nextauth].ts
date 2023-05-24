@@ -1,9 +1,8 @@
 import { env } from "@/libs"
-import NextAuth from "next-auth"
+import NextAuth, { type NextAuthOptions } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
-/** @type{import("next-auth").NextAuthOptions} */
-const nextAuthConfigOptions = {
+const nextAuthConfigOptions: NextAuthOptions = {
     // NEXTAUTH PROVIDERS OPTIONS
     providers: [GoogleProvider(env.nextauth.providers.google)],
     // NEXTAUTH SESSION STRATEGY
@@ -28,7 +27,7 @@ const nextAuthConfigOptions = {
     // NEXTAUTH DEBUG SESSION IFF ENV -> DEVELOPMENT
     debug: process.env.NODE_ENV === "development",
     // NEXTAUTH SECRET KEY
-    secret: env.nextauth.secret,
+    secret: env.nextauth.secret as string,
 }
 
 export default NextAuth(nextAuthConfigOptions)

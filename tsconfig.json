@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "target": "ES2017",
+        "lib": ["es6", "dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "ESNEXT",
+        "declaration": true,
+        "skipDefaultLibCheck": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "incremental": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/(general)/*": ["components/(general)/*"],
+            "@/(landing)/*": ["components/(landing)/*"],
+            "@/(login)/*": ["components/(login)/*"],
+            "@/(account)/*": ["components/(account)/*"],
+            "@/(dashboard)/*": ["components/(dashboard)/*"],
+            "@/(posts)/*": ["components/(posts)/*"],
+            "@/(contact)/*": ["components/(contact)/*"],
+            "@/helpers": ["helpers/index.ts"],
+            "@/hooks": ["hooks/index.ts"],
+            "@/libs": ["libs/index.ts"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", "next.config.js"]
+}

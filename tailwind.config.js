@@ -2,8 +2,8 @@
 module.exports = {
     content: [
         // files to apply tailwind classes for
-        "./pages/**/*.{js,jsx}",
-        "./components/**/*.{js,jsx}",
+        "./pages/**/*.{ts,tsx}",
+        "./components/**/*.{ts,tsx}",
     ],
     theme: {
         extend: {

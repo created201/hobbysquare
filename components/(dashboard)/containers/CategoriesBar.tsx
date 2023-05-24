@@ -1,8 +1,8 @@
 import { classnames } from "@/helpers"
 import dynamic from "next/dynamic"
 
-const ChooseCategory = dynamic(() =>
-    import("@/(dashboard)/buttons/ChooseCategory")
+const ChooseCategory = dynamic(
+    () => import("@/(dashboard)/buttons/ChooseCategory")
 )
 
 const CategoriesBar = ({ selectedCategory, categories, onSelect }) => {

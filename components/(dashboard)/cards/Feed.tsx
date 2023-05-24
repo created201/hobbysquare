@@ -68,7 +68,7 @@ const Feed = ({ _id, data }) => {
                 {/* Profile Section */}
                 <div className="col-span-3 sm:col-span-2 p-2 flex flex-col justify-center">
                     {/* <h3 className="text-xl font-bold text-center mb-1">{_id}</h3> */}
-                    <UserProfile width="max-w-[100px] mb-1" />
+                    <UserProfile width="max-w-[100px] mb-1" user={null} />
                     <div className="flex flex-col items-center mb-3">
                         <p className="text-center capitalize text-theme-gray/75">
                             {skillLevel}

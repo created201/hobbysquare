@@ -1,8 +1,8 @@
 import { classnames } from "@/helpers"
 import dynamic from "next/dynamic"
 
-const ExpandProfile = dynamic(() =>
-    import("@/(dashboard)/buttons/ExpandProfile")
+const ExpandProfile = dynamic(
+    () => import("@/(dashboard)/buttons/ExpandProfile")
 )
 const UserProfile = dynamic(() => import("@/(general)/images/UserProfile"))
 

@@ -4,8 +4,8 @@ import Image from "next/image"
 import LandingBackground from "public/hobbysquare_landing.png"
 
 const PrimaryLayout = dynamic(() => import("@/(general)/layouts/PrimaryLayout"))
-const GetStartedButton = dynamic(() =>
-    import("@/(landing)/buttons/GetStartedButton")
+const GetStartedButton = dynamic(
+    () => import("@/(landing)/buttons/GetStartedButton")
 )
 const MainText = dynamic(() => import("@/(landing)/texts/MainText"))
 const HeaderLayout = dynamic(() => import("@/(general)/layouts/HeaderLayout"))

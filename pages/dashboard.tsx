@@ -7,11 +7,11 @@ const HeaderLayout = dynamic(() => import("@/(general)/layouts/HeaderLayout"))
 const PrimaryLayout = dynamic(() => import("@/(general)/layouts/PrimaryLayout"))
 const SearchBar = dynamic(() => import("@/(dashboard)/containers/SearchBar"))
 const Feeds = dynamic(() => import("@/(dashboard)/containers/Feeds"))
-const CategoriesBar = dynamic(() =>
-    import("@/(dashboard)/containers/CategoriesBar")
+const CategoriesBar = dynamic(
+    () => import("@/(dashboard)/containers/CategoriesBar")
 )
-const UserProfileBar = dynamic(() =>
-    import("@/(dashboard)/containers/UserProfileBar")
+const UserProfileBar = dynamic(
+    () => import("@/(dashboard)/containers/UserProfileBar")
 )
 
 const DashboardPage = ({ user }) => {

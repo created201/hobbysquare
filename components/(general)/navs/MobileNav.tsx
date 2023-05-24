@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic"
 
 const UserProfile = dynamic(() => import("@/(general)/images/UserProfile"))
-const MobileMenuButton = dynamic(() =>
-    import("@/(general)/buttons/MobileMenuButton")
+const MobileMenuButton = dynamic(
+    () => import("@/(general)/buttons/MobileMenuButton")
 )
 
 const MobileNav = ({ onClick, show, user }) => {

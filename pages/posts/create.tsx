@@ -13,8 +13,8 @@ const PrimaryLayout = dynamic(() => import("@/(general)/layouts/PrimaryLayout"))
 const HeaderLayout = dynamic(() => import("@/(general)/layouts/HeaderLayout"))
 const UserProfile = dynamic(() => import("@/(general)/images/UserProfile"))
 const TextInput = dynamic(() => import("@/(posts)/inputs/TextInput"))
-const TextInputPreview = dynamic(() =>
-    import("@/(posts)/texts/TextInputPreview")
+const TextInputPreview = dynamic(
+    () => import("@/(posts)/texts/TextInputPreview")
 )
 
 const CreatePostPage = ({ user }) => {

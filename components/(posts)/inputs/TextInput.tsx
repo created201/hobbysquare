@@ -6,7 +6,7 @@ const TextInput = ({
     value,
     onChange,
     onReset,
-    variant = "input" | "textarea",
+    variant = "input",
     rows = 6,
 }) => {
     return (

@@ -45,7 +45,7 @@ const DesktopNav = ({ routeNames, routes, currentRoute, user }) => {
                 )}
                 {user && (
                     <button
-                        onClick={signOut}
+                        onClick={() => signOut()}
                         className={classnames(
                             "capitalize transition-smooth text-pink-500 hover:opacity-75"
                         )}
