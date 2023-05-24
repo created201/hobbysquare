@@ -46,7 +46,7 @@ const MobileNavToggle = ({ show, user }) => {
                 )}
                 {user && (
                     <button
-                        onClick={signOut}
+                        onClick={() => signOut()}
                         className="w-full flex items-center justify-between gap-x-4 font0medium text-pink-500"
                     >
                         <span>Sign Out</span>

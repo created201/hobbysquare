@@ -181,11 +181,15 @@ const CreatePostPage = ({ user }) => {
                                                 : "Show Preview"}
                                         </button>
                                     </div>
-                                    <UserProfile width="max-w-[50px] mb-4" />
+                                    <UserProfile
+                                        user={null}
+                                        width="max-w-[50px] mb-4"
+                                    />
                                     {title.value && (
                                         <div className="flex flex-col gap-y-1 mb-2">
                                             <div className="flex items-center gap-x-2">
                                                 <TextInputPreview
+                                                    withLabel
                                                     label={"title"}
                                                     font="font-semibold text-xl text-theme-dark"
                                                     margin="mb-0"
@@ -207,6 +211,7 @@ const CreatePostPage = ({ user }) => {
                                     )}
                                     {description.value && (
                                         <TextInputPreview
+                                            withLabel
                                             label={"description"}
                                             font="font-base text-base text-theme-gray/75"
                                             margin="mb-4"

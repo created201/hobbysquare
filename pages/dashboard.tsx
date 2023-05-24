@@ -69,7 +69,6 @@ const DashboardPage = ({ user }) => {
                                 displayPattern="lg:grid hidden"
                             />
                             <Feeds
-                                expand={!expandProfile}
                                 feeds={
                                     category
                                         ? getMockFeeds().filter(

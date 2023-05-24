@@ -1,3 +1,4 @@
+import { NextAuthGoogleProviderOption } from "types-config"
 import {
     baseUri,
     database,
@@ -16,10 +17,10 @@ interface IEnv {
 class Env implements IEnv {
     public baseUri: typeof baseUri.baseUri
     public database: typeof database.database
-    public nextauth: Record<
-        string,
-        string | Record<string, Record<string, string>>
-    >
+    public nextauth: {
+        secret: typeof nextAuthSecret
+        providers: typeof nextAuthProviders
+    }
     public nodemailer: typeof nodeMailer.nodemailer
 
     constructor() {

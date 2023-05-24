@@ -4,7 +4,7 @@ import GoogleProvider from "next-auth/providers/google"
 
 const nextAuthConfigOptions: NextAuthOptions = {
     // NEXTAUTH PROVIDERS OPTIONS
-    providers: [GoogleProvider(env.nextauth.providers.google)],
+    providers: [GoogleProvider(env.nextauth.providers.google as never)],
     // NEXTAUTH SESSION STRATEGY
     session: { strategy: "jwt" },
     // CUSTOM CALLBACK OPTIONS [jwt, session, signIn]
@@ -16,7 +16,7 @@ const nextAuthConfigOptions: NextAuthOptions = {
             return params.token
         },
         async session(params) {
-            params.session.user._id = params.token.id
+            // params.session.user._id = params.token.id
             return params.session
         },
         async signIn(_params) {

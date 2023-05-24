@@ -25,7 +25,7 @@ const IndexPage = ({ user }) => {
                 <section className="px-8 2xl:px-0 max-w-cutoff mx-auto w-full flex flex-col items-center">
                     <article className="flex flex-col items-center gap-y-6">
                         <MainText />
-                        <GetStartedButton user="jin lee" />
+                        <GetStartedButton />
                     </article>
                 </section>
             </div>
