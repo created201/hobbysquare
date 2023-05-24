@@ -7,9 +7,9 @@ const FooterLayout = () => {
                 <div className="w-full flex flex-col lg:items-center gap-y-6 pb-8 lg:pb-0 border-b border-theme-dark/25 lg:border-none">
                     <div className="flex items-center gap-x-4 relative">
                         <h4 className="text-xl lg:text-2xl font-medium">
-                            <string className="text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-amber-400">
+                            <strong className="text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-amber-400">
                                 HobbySquare
-                            </string>
+                            </strong>
                         </h4>
                         <ul className="">
                             <span className="relative top-2 w-[25px] h-[25px] p-0.5 bg-gradient-to-r from-orange-500 via-amber-500 to-pink-500 flex justify-center items-center transform rotate-45">
