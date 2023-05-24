@@ -5,8 +5,8 @@ import { useState } from "react"
 
 const LogoLink = dynamic(() => import("@/(general)/links/LogoLink"))
 const MobileNav = dynamic(() => import("@/(general)/navs/MobileNav"))
-const MobileNavToggle = dynamic(() =>
-    import("@/(general)/navs/MobileNavToggle")
+const MobileNavToggle = dynamic(
+    () => import("@/(general)/navs/MobileNavToggle")
 )
 const DesktopNav = dynamic(() => import("@/(general)/navs/DesktopNav"))
 
